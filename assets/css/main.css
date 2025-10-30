@@ -4687,3 +4687,44 @@ input, select, textarea {
 		}
 
 	}
+
+	.collapsible {
+    /* Flexbox 核心：实现垂直居中 */
+    	display: flex;
+    	align-items: center; /* 垂直居中 */
+    
+    	background-color: #f7f7f7;
+    	color: #444;
+    	cursor: pointer;
+    	width: 100%;
+    	border: none;
+    	outline: none;
+    	font-size: 15px;
+    	transition: 0.4s;
+    
+    /* 关键修正：使用 3rem 作为左侧内边距，使其与主内容对齐 */
+    /* 左右内边距通常是 3rem (48px) 或 2.5rem，您可以根据 F12 检查结果调整 */
+    	padding: 18px 18px 18px 1rem; 
+    
+    /* 移除 text-align: left，因为它会被 Flexbox 覆盖 */
+    	text-align: left; /* 保留这个以防 Flexbox 未生效，但主要依赖 padding */
+	}
+
+
+	.active, .collapsible:hover {
+    	background-color: #ccc;
+	}
+
+	/* 默认隐藏内容，使用 max-height 来实现平滑过渡 */
+	.content {
+		/* 核心修正：
+		- 上下 padding 设为 0（您不需要上下留白，如果需要请调整）
+		- 左右 padding 都设置为 1rem，实现左对齐。
+		*/
+		padding: 0 1rem; 
+		
+		max-height: 0; 
+		overflow: hidden;
+		transition: max-height 0.2s ease-out; 
+		background-color: #f1f1f1;
+	}
