@@ -100,6 +100,12 @@ input, select, textarea {
 
 	body {
 		background-color: #1e252d;
+		background-image: url('your-image.jpg');  /* 替换为你的图片路径 */
+    	background-size: cover;                  /* 使背景图像自适应屏幕 */
+    	background-position: center;             /* 背景图像居中 */
+		background-repeat: no-repeat;            /* 防止背景图像重复 */
+    	height: 100vh;                           /* 使背景图像覆盖整个视口高度 */
+    	margin: 0;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -3228,18 +3234,20 @@ input, select, textarea {
 	}
 
 		#wrapper > .bg {
-			position: absolute;
+			position: fixed !important;
 			top: 0;
 			left: 0;
-			width: 100%;
-			height: 100%;
+			width: 100vw;
+			height: 100vh;
 			background-color: #212931;
 			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");
-			background-size: auto,								auto,														100% contain;
+			background-size: auto,								auto,														100%  100%;
 			background-position: center,								center,														center center;
 			background-repeat: repeat,								no-repeat,													no-repeat;
-			background-attachment: scroll,								scroll,														scroll;
+			background-attachment: fixed;
 			z-index: -1;
+			transform: none !important; 
+    		transition: none !important;
 		}
 
 			#wrapper > .bg.fixed {
@@ -3276,7 +3284,7 @@ input, select, textarea {
 		@media screen and (orientation: portrait) {
 
 			#wrapper > .bg {
-				background-size: auto,								auto,														auto 175%;
+				background-size: auto,								auto,														cover;
 			}
 
 		}
