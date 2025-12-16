@@ -11,12 +11,152 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+        <!-- 自定义折叠样式 (Archive Accordion Styles) -->
+        <style>
+            .archive-container {
+                width: 100%;
+                text-align: left;
+                margin-top: 2rem;
+            }
+
+            /* --- Level 1: 年份 (Year) --- */
+            button.accordion-year {
+                background-color: transparent !important;
+                color: #212931;
+                cursor: pointer;
+                padding: 1.5rem 0;
+                width: 100%;
+                border: none;
+                border-bottom: 2px solid #eeeeee;
+                text-align: left;
+                outline: none;
+                font-family: "Merriweather", Georgia, serif;
+                font-size: 2rem;
+                font-weight: 700;
+                line-height: 1.3;
+                letter-spacing: normal;
+                text-transform: none;
+                transition: color 0.3s ease, border-color 0.3s ease;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0;
+                box-shadow: none !important;
+                height: auto;
+                appearance: none;
+                -webkit-appearance: none;
+            }
+
+            button.accordion-year:hover {
+                color: #18bfef;
+                border-bottom-color: #18bfef;
+            }
+            
+            button.accordion-year.active {
+                border-bottom-color: transparent;
+                color: #18bfef;
+            }
+
+            /* --- Level 2: 月份 (Month) --- */
+            button.accordion-month {
+                background-color: transparent !important;
+                color: #555;
+                cursor: pointer;
+                padding: 1rem 0 1rem 1.5rem;
+                width: 100%;
+                border: none;
+                border-bottom: 1px dashed #eee;
+                text-align: left;
+                outline: none;
+                font-family: "Open Sans", sans-serif;
+                font-size: 1.3rem;
+                font-weight: 600;
+                text-transform: none;
+                letter-spacing: normal;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0;
+                box-shadow: none !important;
+                height: auto;
+                transition: color 0.2s;
+            }
+            
+            button.accordion-month:hover {
+                color: #18bfef;
+            }
+
+            /* --- Level 3: 文章列表 (Post Links) --- */
+            .post-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .post-item {
+                display: block;
+                padding: 0.8rem 0 0.8rem 3rem;
+                border-bottom: 1px solid #f7f7f7;
+                color: #666;
+                text-decoration: none;
+                font-family: "Open Sans", sans-serif;
+                font-size: 1rem;
+                transition: all 0.2s;
+                border-bottom: none;
+            }
+
+            .post-item:hover {
+                color: #18bfef !important;
+                padding-left: 3.5rem;
+                background-color: rgba(24, 191, 239, 0.05);
+            }
+            
+            .post-date-tag {
+                font-size: 0.85em;
+                color: #999;
+                margin-right: 15px;
+                font-family: monospace;
+                display: inline-block;
+                min-width: 100px;
+            }
+
+            /* --- 动画逻辑 --- */
+            .panel {
+                padding: 0;
+                background-color: transparent;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+                opacity: 0;
+            }
+            
+            .panel.open {
+                opacity: 1;
+            }
+
+            /* --- 图标 (+ / -) --- */
+            .icon-indicator::after {
+                content: '+'; 
+                font-family: monospace;
+                font-size: 1.5rem;
+                font-weight: lighter;
+                float: right;
+                margin-left: 10px;
+                color: #ccc;
+            }
+
+            .active > .icon-indicator::after {
+                content: "−";
+                color: #18bfef;
+            }
+        </style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
-<!-- introduction是前面的大字 -->
+                <!-- introduction是前面的大字 (保留原文件内容) -->
 				<!-- Intro -->
 					<div id="intro">
 						<h1>Jay liu<br />
@@ -28,19 +168,20 @@
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
 					</div>
-				<!-- 滑动下拉大时候出现的logo-->
+                    
+				<!-- 滑动下拉大时候出现的logo (保留原文件内容) -->
 					<header id="header">
 						<a href="index.html" class="logo">Jay Liu</a>
 					</header>
 
-				<!-- Nav -->
+				<!-- Nav (保留原文件内容) -->
 					<nav id="nav">
 						<ul class="links">
 							<li class="active"><a href="index.html">Home</a></li>
-							<li><a href="biology.html">Biology</a></li>
-							<li><a href="machine learning.html">Mechine Learning</a></li>
-							<li><a href="reading.html">Reading</a></li>
-							<li><a href="thoughts.html">Thoughts</a></li>
+							<li><a href="biology/biology.html">Biology</a></li>
+							<li><a href="machine_learning/machine learning.html">Mechine Learning</a></li>
+							<li><a href="reading/reading.html">Reading</a></li>
+							<li><a href="thoughts/thoughts.html">Thoughts</a></li>
 						</ul>
 						<ul class="icons">
 							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
@@ -50,115 +191,137 @@
 						</ul>
 					</nav>
 
-				<!-- Main -->
+				<!-- Main (此处已替换为折叠功能) -->
 					<div id="main">
 
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<span class="date">April 25, 2017</span>
-									<h2><a href="#">And this is a<br />
-									massive headline</a></h2>
-									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-									amet nullam sed etiam veroeros.</p>
-								</header>
-								<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="#" class="button large">Full Story</a></li>
-								</ul>
-							</article>
+                        <!-- 使用 section.post 包裹归档内容，保持样式一致 -->
+						<section class="post">
+                            <header class="major">
+                                <span class="date"></span>
+                                <h1>ARTICLES</h1>
+                                <p>all categories</p>
+                            </header>
 
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-										<span class="date">April 24, 2017</span>
-										<h2><a href="#">Sed magna<br />
-										ipsum faucibus</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 22, 2017</span>
-										<h2><a href="#">Primis eget<br />
-										imperdiet lorem</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 18, 2017</span>
-										<h2><a href="#">Ante mattis<br />
-										interdum dolor</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 14, 2017</span>
-										<h2><a href="#">Tempus sed<br />
-										nulla imperdiet</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 11, 2017</span>
-										<h2><a href="#">Odio magna<br />
-										sed consectetur</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 7, 2017</span>
-										<h2><a href="#">Augue lorem<br />
-										primis vestibulum</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-							</section>
+                            <!-- 折叠归档区域 START -->
+                            <div class="archive-container">
 
-						<!-- Footer -->
-							<footer>
-								<ul class="actions special">
-									<li>
-										<a href="whole.html" class="button">More Stories</a>
-									</li>
-								</ul>
-							</footer>
+                                <!-- ================= YEAR 2024 ================= -->
+                                <button class="accordion-year">
+                                    2024
+                                    <span class="icon-indicator"></span>
+                                </button>
+                                <div class="panel">
+                                    
+                                    <!-- Month: October -->
+                                    <button class="accordion-month">
+                                        October
+                                        <span class="icon-indicator"></span>
+                                    </button>
+                                    <div class="panel">
+                                        <div class="post-list">
+                                            <a href="#" class="post-item">
+                                                <span class="post-date-tag">Oct 24</span>
+                                                Optimizing Web Performance: A Practical Guide
+                                            </a>
+                                            <a href="#" class="post-item">
+                                                <span class="post-date-tag">Oct 10</span>
+                                                Implementing Design Systems in Large Scale Apps
+                                            </a>
+                                        </div>
+                                    </div>
 
+                                    <!-- Month: August -->
+                                    <button class="accordion-month">
+                                        August
+                                        <span class="icon-indicator"></span>
+                                    </button>
+                                    <div class="panel">
+                                        <div class="post-list">
+                                            <a href="#" class="post-item">
+                                                <span class="post-date-tag">Aug 15</span>
+                                                Deep Dive into ES2024 Features
+                                            </a>
+                                            <a href="#" class="post-item">
+                                                <span class="post-date-tag">Aug 02</span>
+                                                Understanding React Server Actions
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- End 2024 -->
+
+
+                                <!-- ================= YEAR 2023 ================= -->
+                                <button class="accordion-year">
+                                    2023
+                                    <span class="icon-indicator"></span>
+                                </button>
+                                <div class="panel">
+                                    
+                                    <!-- Month: December -->
+                                    <button class="accordion-month">
+                                        December
+                                        <span class="icon-indicator"></span>
+                                    </button>
+                                    <div class="panel">
+                                        <div class="post-list">
+                                            <a href="#" class="post-item">
+                                                <span class="post-date-tag">Dec 20</span>
+                                                Year in Review: Technical Growth
+                                            </a>
+                                            <a href="#" class="post-item">
+                                                <span class="post-date-tag">Dec 05</span>
+                                                CSS Grid: Advanced Layout Techniques
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Month: May -->
+                                    <button class="accordion-month">
+                                        May
+                                        <span class="icon-indicator"></span>
+                                    </button>
+                                    <div class="panel">
+                                        <div class="post-list">
+                                            <a href="#" class="post-item">
+                                                <span class="post-date-tag">May 11</span>
+                                                Migrating from Vue 2 to Vue 3
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- End 2023 -->
+                                
+                                <!-- ================= YEAR 2022 ================= -->
+                                <button class="accordion-year">
+                                    2022
+                                    <span class="icon-indicator"></span>
+                                </button>
+                                <div class="panel">
+                                    <button class="accordion-month">
+                                        January
+                                        <span class="icon-indicator"></span>
+                                    </button>
+                                    <div class="panel">
+                                        <div class="post-list">
+                                            <a href="#" class="post-item">
+                                                <span class="post-date-tag">Jan 01</span>
+                                                Hello World: First Post
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End 2022 -->
+
+                            </div>
+                            <!-- 折叠归档区域 END -->
+
+                        </section>
 					</div>
 
-
-
-				<!-- Copyright -->
+				<!-- Copyright (保留原文件个性化内容) -->
 					<div id="copyright">
 						<ul><li>&copy; 2025 jayliu</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
 					</div>
@@ -173,6 +336,52 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+            <!-- 核心折叠逻辑 JS -->
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    // 获取所有的折叠按钮 (包括年份和月份)
+                    var acc = document.getElementsByClassName("accordion-year");
+                    var accMonth = document.getElementsByClassName("accordion-month");
+
+                    // 通用折叠函数
+                    function toggleAccordion(e) {
+                        e.stopPropagation();
+
+                        // 1. 切换 active 类
+                        this.classList.toggle("active");
+                        
+                        // 2. 找到紧随其后的 panel
+                        var panel = this.nextElementSibling;
+                        
+                        // 3. 切换 open 类
+                        panel.classList.toggle("open");
+
+                        // 4. 高度控制逻辑
+                        if (panel.style.maxHeight) {
+                            panel.style.maxHeight = null;
+                        } else {
+                            panel.style.maxHeight = panel.scrollHeight + "px";
+                        } 
+                        
+                        // 5. 嵌套高度修复: 确保父级容器高度随之增加
+                        var parentPanel = this.parentElement;
+                        if (parentPanel.classList.contains("panel")) {
+                            if (parentPanel.style.maxHeight) {
+                                parentPanel.style.maxHeight = parentPanel.scrollHeight + panel.scrollHeight + "px";
+                            }
+                        }
+                    }
+
+                    // 绑定事件
+                    for (var i = 0; i < acc.length; i++) {
+                        acc[i].addEventListener("click", toggleAccordion);
+                    }
+                    for (var j = 0; j < accMonth.length; j++) {
+                        accMonth[j].addEventListener("click", toggleAccordion);
+                    }
+                });
+            </script>
 
 	</body>
 </html>
