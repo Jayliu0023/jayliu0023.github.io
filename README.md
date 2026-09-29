@@ -15,7 +15,7 @@
 - `_archive/`：旧模板、旧页面和原始主题压缩包，不发布到站点。
 - `scripts/check_site.py`：本地链接、资源路径和基础页面检查。
 
-栏目入口统一为 `目录/index.html`；旧入口保留跳转，已有书签仍可使用。Biology 和 Machine Learning 各放置一篇明确标注的示例文章（`example-article.html`），用于展示文章格式；旧子分类地址统一跳转到栏目列表。
+栏目入口统一为 `目录/index.html`；旧入口保留跳转，已有书签仍可使用。Biology 和 Machine Learning 各放置四篇明确标注的示例文章（可用 `example-article.html` 作为模板），用于展示文章格式；旧子分类地址统一跳转到栏目列表。
 
 ## 预览与检查
 
