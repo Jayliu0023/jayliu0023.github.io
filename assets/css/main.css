@@ -100,7 +100,6 @@ input, select, textarea {
 
 	body {
 		background-color: #1e252d;
-		background-image: url('your-image.jpg');  /* 替换为你的图片路径 */
     	background-size: cover;                  /* 使背景图像自适应屏幕 */
     	background-position: center;             /* 背景图像居中 */
 		background-repeat: no-repeat;            /* 防止背景图像重复 */

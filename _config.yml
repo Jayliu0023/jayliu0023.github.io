@@ -1,0 +1,5 @@
+# GitHub Pages publishes the repository root; archive and tooling remain in the source tree only.
+exclude:
+  - _archive
+  - scripts
+  - README.md

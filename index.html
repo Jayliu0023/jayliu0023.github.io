@@ -1,388 +1,55 @@
 <!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Jay Liu</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-        <!-- 自定义折叠样式 (Archive Accordion Styles) -->
-        <style>
-            .archive-container {
-                width: 100%;
-                text-align: left;
-                margin-top: 2rem;
-            }
-
-            /* --- Level 1: 年份 (Year) --- */
-            button.accordion-year {
-                background-color: transparent !important;
-                color: #212931;
-                cursor: pointer;
-                padding: 1.5rem 0;
-                width: 100%;
-                border: none;
-                border-bottom: 2px solid #eeeeee;
-                text-align: left;
-                outline: none;
-                font-family: "Merriweather", Georgia, serif;
-                font-size: 2rem;
-                font-weight: 700;
-                line-height: 1.3;
-                letter-spacing: normal;
-                text-transform: none;
-                transition: color 0.3s ease, border-color 0.3s ease;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 0;
-                box-shadow: none !important;
-                height: auto;
-                appearance: none;
-                -webkit-appearance: none;
-            }
-
-            button.accordion-year:hover {
-                color: #18bfef;
-                border-bottom-color: #18bfef;
-            }
-            
-            button.accordion-year.active {
-                border-bottom-color: transparent;
-                color: #18bfef;
-            }
-
-            /* --- Level 2: 月份 (Month) --- */
-            button.accordion-month {
-                background-color: transparent !important;
-                color: #555;
-                cursor: pointer;
-                padding: 1rem 0 1rem 1.5rem;
-                width: 100%;
-                border: none;
-                border-bottom: 1px dashed #eee;
-                text-align: left;
-                outline: none;
-                font-family: "Open Sans", sans-serif;
-                font-size: 1.3rem;
-                font-weight: 600;
-                text-transform: none;
-                letter-spacing: normal;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin: 0;
-                box-shadow: none !important;
-                height: auto;
-                transition: color 0.2s;
-            }
-            
-            button.accordion-month:hover {
-                color: #18bfef;
-            }
-
-            /* --- Level 3: 文章列表 (Post Links) --- */
-            .post-list {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-
-            .post-item {
-                display: block;
-                padding: 0.8rem 0 0.8rem 3rem;
-                border-bottom: 1px solid #f7f7f7;
-                color: #666;
-                text-decoration: none;
-                font-family: "Open Sans", sans-serif;
-                font-size: 1rem;
-                transition: all 0.2s;
-                border-bottom: none;
-            }
-
-            .post-item:hover {
-                color: #18bfef !important;
-                padding-left: 3.5rem;
-                background-color: rgba(24, 191, 239, 0.05);
-            }
-            
-            .post-date-tag {
-                font-size: 0.85em;
-                color: #999;
-                margin-right: 15px;
-                font-family: monospace;
-                display: inline-block;
-                min-width: 100px;
-            }
-
-            /* --- 动画逻辑 --- */
-            .panel {
-                padding: 0;
-                background-color: transparent;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-                opacity: 0;
-            }
-            
-            .panel.open {
-                opacity: 1;
-            }
-
-            /* --- 图标 (+ / -) --- */
-            .icon-indicator::after {
-                content: '+'; 
-                font-family: monospace;
-                font-size: 1.5rem;
-                font-weight: lighter;
-                float: right;
-                margin-left: 10px;
-                color: #ccc;
-            }
-
-            .active > .icon-indicator::after {
-                content: "−";
-                color: #18bfef;
-            }
-        </style>
-	</head>
-	<body class="is-preload">
-
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
-            <div class="bg"></div>
-                <!-- introduction是前面的大字 (保留原文件内容) -->
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Jay liu<br />
-				        </h1>
-						<p>Structure Biology & Mechine Learning & History<br />
-							in USTC</p> 
-							<a href="http://github.com/jayliu0023">@jayliu0023</a> .</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
-                    
-				<!-- 滑动下拉大时候出现的logo (保留原文件内容) -->
-					<header id="header">
-						<a href="index.html" class="logo">Jay Liu</a>
-					</header>
-
-				<!-- Nav (保留原文件内容) -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Home</a></li>
-							<li><a href="biology/biology.html">Biology</a></li>
-							<li><a href="machine_learning/machine learning.html">Mechine Learning</a></li>
-							<li><a href="reading/reading.html">Reading</a></li>
-							<li><a href="thoughts/thoughts.html">Thoughts</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
-
-				<!-- Main (此处已替换为折叠功能) -->
-					<div id="main">
-
-                        <!-- 使用 section.post 包裹归档内容，保持样式一致 -->
-						<section class="post">
-                            <header class="major">
-                                <span class="date"></span>
-                                <h1>ARTICLES</h1>
-                                <p>all categories</p>
-                            </header>
-
-                            <!-- 折叠归档区域 START -->
-                            <div class="archive-container">
-
-                                <!-- ================= YEAR 2024 ================= -->
-                                <button class="accordion-year">
-                                    2024
-                                    <span class="icon-indicator"></span>
-                                </button>
-                                <div class="panel">
-                                    
-                                    <!-- Month: October -->
-                                    <button class="accordion-month">
-                                        October
-                                        <span class="icon-indicator"></span>
-                                    </button>
-                                    <div class="panel">
-                                        <div class="post-list">
-                                            <a href="#" class="post-item">
-                                                <span class="post-date-tag">Oct 24</span>
-                                                Optimizing Web Performance: A Practical Guide
-                                            </a>
-                                            <a href="#" class="post-item">
-                                                <span class="post-date-tag">Oct 10</span>
-                                                Implementing Design Systems in Large Scale Apps
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Month: August -->
-                                    <button class="accordion-month">
-                                        August
-                                        <span class="icon-indicator"></span>
-                                    </button>
-                                    <div class="panel">
-                                        <div class="post-list">
-                                            <a href="#" class="post-item">
-                                                <span class="post-date-tag">Aug 15</span>
-                                                Deep Dive into ES2024 Features
-                                            </a>
-                                            <a href="#" class="post-item">
-                                                <span class="post-date-tag">Aug 02</span>
-                                                Understanding React Server Actions
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- End 2024 -->
-
-
-                                <!-- ================= YEAR 2023 ================= -->
-                                <button class="accordion-year">
-                                    2023
-                                    <span class="icon-indicator"></span>
-                                </button>
-                                <div class="panel">
-                                    
-                                    <!-- Month: December -->
-                                    <button class="accordion-month">
-                                        December
-                                        <span class="icon-indicator"></span>
-                                    </button>
-                                    <div class="panel">
-                                        <div class="post-list">
-                                            <a href="#" class="post-item">
-                                                <span class="post-date-tag">Dec 20</span>
-                                                Year in Review: Technical Growth
-                                            </a>
-                                            <a href="#" class="post-item">
-                                                <span class="post-date-tag">Dec 05</span>
-                                                CSS Grid: Advanced Layout Techniques
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Month: May -->
-                                    <button class="accordion-month">
-                                        May
-                                        <span class="icon-indicator"></span>
-                                    </button>
-                                    <div class="panel">
-                                        <div class="post-list">
-                                            <a href="#" class="post-item">
-                                                <span class="post-date-tag">May 11</span>
-                                                Migrating from Vue 2 to Vue 3
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- End 2023 -->
-                                
-                                <!-- ================= YEAR 2022 ================= -->
-                                <button class="accordion-year">
-                                    2022
-                                    <span class="icon-indicator"></span>
-                                </button>
-                                <div class="panel">
-                                    <button class="accordion-month">
-                                        January
-                                        <span class="icon-indicator"></span>
-                                    </button>
-                                    <div class="panel">
-                                        <div class="post-list">
-                                            <a href="#" class="post-item">
-                                                <span class="post-date-tag">Jan 01</span>
-                                                Hello World: First Post
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End 2022 -->
-
-                            </div>
-                            <!-- 折叠归档区域 END -->
-
-                        </section>
-					</div>
-
-				<!-- Copyright (保留原文件个性化内容) -->
-					<div id="copyright">
-						<ul><li>&copy; 2025 jayliu</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-            <!-- 核心折叠逻辑 JS -->
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    // 获取所有的折叠按钮 (包括年份和月份)
-                    var acc = document.getElementsByClassName("accordion-year");
-                    var accMonth = document.getElementsByClassName("accordion-month");
-
-                    // 通用折叠函数
-                    function toggleAccordion(e) {
-                        e.stopPropagation();
-
-                        // 1. 切换 active 类
-                        this.classList.toggle("active");
-                        
-                        // 2. 找到紧随其后的 panel
-                        var panel = this.nextElementSibling;
-                        
-                        // 3. 切换 open 类
-                        panel.classList.toggle("open");
-
-                        // 4. 高度控制逻辑
-                        if (panel.style.maxHeight) {
-                            panel.style.maxHeight = null;
-                        } else {
-                            panel.style.maxHeight = panel.scrollHeight + "px";
-                        } 
-                        
-                        // 5. 嵌套高度修复: 确保父级容器高度随之增加
-                        var parentPanel = this.parentElement;
-                        if (parentPanel.classList.contains("panel")) {
-                            if (parentPanel.style.maxHeight) {
-                                parentPanel.style.maxHeight = parentPanel.scrollHeight + panel.scrollHeight + "px";
-                            }
-                        }
-                    }
-
-                    // 绑定事件
-                    for (var i = 0; i < acc.length; i++) {
-                        acc[i].addEventListener("click", toggleAccordion);
-                    }
-                    for (var j = 0; j < accMonth.length; j++) {
-                        accMonth[j].addEventListener("click", toggleAccordion);
-                    }
-                });
-            </script>
-
-	</body>
+<!-- Massively by HTML5 UP | html5up.net | CCA 3.0 (html5up.net/license) -->
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home - Jay Liu</title>
+    <meta name="description" content="Jay Liu&#x27;s notes on structural biology, machine learning, history, and reading." />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/blog.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload section-home">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="wrapper" class="fade-in">
+        <div class="bg" aria-hidden="true"></div>
+        <div id="intro">
+            <h1>Jay Liu</h1>
+            <p>Structural Biology &amp; Machine Learning &amp; History<br />in USTC</p>
+            <p><a href="https://github.com/Jayliu0023">@jayliu0023</a></p>
+            <ul class="actions"><li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Explore</a></li></ul>
+        </div>
+        <header id="header"><a href="index.html" class="logo">Jay Liu</a></header>
+        <nav id="nav" aria-label="Main navigation">
+            <ul class="links">
+                    <li class="active"><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="biology/index.html">Biology</a></li>
+                    <li><a href="machine_learning/index.html">Machine Learning</a></li>
+                    <li><a href="reading/index.html">Reading</a></li>
+                    <li><a href="thoughts/index.html">Thoughts</a></li>
+            </ul>
+            <ul class="icons"><li><a href="https://github.com/Jayliu0023" class="icon brands fa-github"><span class="label">GitHub</span></a></li></ul>
+        </nav>
+        <main id="main" tabindex="-1">
+            <section class="post">
+            <header class="major"><h1>Explore the blog</h1><p>Notes on science, learning, books, and life.</p></header>
+            <ul class="directory">
+                <li><a href="biology/index.html"><strong>Biology</strong><span>Structural biology and research notes</span></a></li>
+                <li><a href="machine_learning/index.html"><strong>Machine Learning</strong><span>Principles, recent research, and interesting ideas</span></a></li>
+                <li><a href="reading/index.html"><strong>Reading</strong><span>Books and reading notes</span></a></li>
+                <li><a href="thoughts/index.html"><strong>Thoughts</strong><span>Personal reflections</span></a></li>
+            </ul>
+            </section>
+        </main>
+        <div id="copyright"><ul><li>&copy; 2025 Jay Liu</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul></div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
 </html>

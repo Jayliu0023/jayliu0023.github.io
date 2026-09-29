@@ -1,0 +1,35 @@
+/* Site additions. Keep template CSS separate from page-specific styles. */
+.skip-link {
+    position: fixed;
+    top: -5rem;
+    left: 1rem;
+    z-index: 10001;
+    padding: .6rem 1rem;
+    background: #fff;
+    color: #212931;
+}
+.skip-link:focus { top: 1rem; }
+:focus-visible { outline: 2px solid #18bfef; outline-offset: 4px; }
+#main { scroll-margin-top: 1rem; }
+.directory { list-style: none; padding: 0; margin: 2rem 0 0; }
+.directory li { padding: 0; border-top: 1px solid #eee; }
+.directory a { display: block; border: 0; padding: 1.5rem 0; }
+.directory strong { display: block; font-size: 1.4rem; }
+.directory span { display: block; color: #717981; font-size: .95rem; }
+.empty-state { text-align: center; padding: 2rem 0; color: #717981; }
+.book { border-bottom: 1px solid #eee; padding: 1.2rem 0; }
+.book summary { cursor: pointer; font-weight: 700; font-size: 1.3rem; line-height: 1.5; }
+.book summary:hover, .book[open] summary { color: #18bfef; }
+.book blockquote { margin: 1.2rem 0 .5rem 1rem; color: #666; }
+.section-biology #wrapper > .bg { background-image: url('../../images/overlay.png'), linear-gradient(0deg, rgba(0,0,0,.1), rgba(0,0,0,.1)), url('../../images/biology-bg.jpg'); }
+.section-machine_learning #wrapper > .bg { background-image: url('../../images/overlay.png'), linear-gradient(0deg, rgba(0,0,0,.1), rgba(0,0,0,.1)), url('../../images/machine_learning-bg.jpg'); }
+.section-reading #wrapper > .bg { background-image: url('../../images/overlay.png'), linear-gradient(0deg, rgba(0,0,0,.1), rgba(0,0,0,.1)), url('../../images/reading-bg.jpg'); }
+.section-thoughts #wrapper > .bg { background-image: url('../../images/overlay.png'), linear-gradient(0deg, rgba(0,0,0,.1), rgba(0,0,0,.1)), url('../../images/thoughts-bg.jpg'); }
+@media screen and (max-width: 736px) {
+    .book summary { font-size: 1.1rem; }
+    .book blockquote { margin-left: 0; padding-left: 1rem; }
+    .directory strong { font-size: 1.2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

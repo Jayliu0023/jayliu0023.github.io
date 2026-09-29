@@ -1,4 +1,4 @@
-@import url(font-awesome.min.css);
+@import url(fontawesome-all.min.css);
 
 /*
 	Massively by HTML5 UP
@@ -34,3 +34,10 @@
 			transform: none;
 			opacity: 1;
 		}
+/* Keep navigation usable without JavaScript, including small screens. */
+@media screen and (max-width: 980px) {
+    #nav { display: flex; height: auto; margin-top: 0; }
+    #nav .links { display: flex; flex-wrap: wrap; }
+    #nav .links li a { padding: 0 1rem; }
+    #nav .icons { display: none; }
+}
