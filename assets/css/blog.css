@@ -16,7 +16,6 @@
 .directory a { display: block; border: 0; padding: 1.5rem 0; }
 .directory strong { display: block; font-size: 1.4rem; }
 .directory span { display: block; color: #717981; font-size: .95rem; }
-.empty-state { text-align: center; padding: 2rem 0; color: #717981; }
 .book { border-bottom: 1px solid #eee; padding: 1.2rem 0; }
 .book summary { cursor: pointer; font-weight: 700; font-size: 1.3rem; line-height: 1.5; }
 .book summary:hover, .book[open] summary { color: #18bfef; }

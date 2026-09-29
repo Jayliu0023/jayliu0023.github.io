@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Machine Learning - Jay Liu</title>
-    <meta name="description" content="Machine Learning notes by Jay Liu." />
+    <title>From data to a simple learning model - Jay Liu</title>
+    <meta name="description" content="A short walkthrough of training, validation, and evaluating a model on unseen data." />
     <link rel="stylesheet" href="../assets/css/main.css" />
     <link rel="stylesheet" href="../assets/css/blog.css" />
     <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
@@ -19,21 +19,24 @@
             <ul class="links">
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../biology/index.html">Biology</a></li>
-                    <li class="active"><a href="../machine_learning/index.html" aria-current="page">Machine Learning</a></li>
+                    <li class="active"><a href="../machine_learning/index.html">Machine Learning</a></li>
                     <li><a href="../reading/index.html">Reading</a></li>
                     <li><a href="../thoughts/index.html">Thoughts</a></li>
             </ul>
             <ul class="icons"><li><a href="https://github.com/Jayliu0023" class="icon brands fa-github"><span class="label">GitHub</span></a></li></ul>
         </nav>
         <main id="main" tabindex="-1">
-            <section class="post">
-                <header class="major"><h1>Machine Learning</h1><p>Articles and notes.</p></header>
-                <article>
-                    <header><p>Example article</p><h2><a href="example-article.html">From data to a simple learning model</a></h2></header>
-                    <p>A short walkthrough of training, validation, and evaluating a model on unseen data.</p>
-                    <ul class="actions"><li><a href="example-article.html" class="button">Read article</a></li></ul>
-                </article>
-            </section>
+            <article class="post">
+                <header class="major"><p>Example article · Machine Learning</p><h1>From data to a simple learning model</h1><p>A short walkthrough of training, validation, and evaluating a model on unseen data.</p></header>
+                <p><em>This sample demonstrates the article format for this blog.</em></p>
+                <h2>Start with a clear task</h2>
+                <p>Before choosing a model, define its input, expected output, and evaluation metric. For a simple regression task, the model predicts a numerical value and learns from examples with known targets.</p>
+                <h2>Separate fitting from evaluation</h2>
+                <p>Fit the model on training data and use validation data to choose settings. Keep the test data separate until the final evaluation. Any preprocessing learned from data, such as a scaling transformation, must be fitted only on the training split.</p>
+                <h2>Compare against a baseline</h2>
+                <p>A useful model should improve on a simple baseline, such as predicting the training-set mean. Test performance estimates how well the model generalizes under the evaluation conditions; it does not guarantee the same performance when the data distribution changes.</p>
+                <p><a href="index.html">&larr; Back to Machine Learning</a></p>
+            </article>
         </main>
         <div id="copyright"><ul><li>&copy; 2025 Jay Liu</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul></div>
     </div>
